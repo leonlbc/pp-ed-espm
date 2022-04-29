@@ -4,7 +4,7 @@ public class Lista {
 
 	No inicio, fim;
 	
-	// método para inserir um elemento na lista
+	// metodo para inserir um elemento na lista
 	public void inserir(int dado) {
 		No aux = new No(dado);
 		if(inicio == null) {
@@ -16,7 +16,7 @@ public class Lista {
 		inicio = aux;		
 	}
 	
-	// método para imprimir os elementos da lista
+	// metodo para imprimir os elementos da lista
 	public void imprimir() {
 		No aux = inicio;
 		while(aux != null) {

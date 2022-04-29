@@ -5,7 +5,7 @@ public class Main {
 		
 		Lista lista = new Lista();
 		
-		// inserção dos elementos na lista
+		// insercao dos elementos na lista
 		lista.inserir(1);
 		lista.inserir(2);
 		lista.inserir(3);
@@ -20,6 +20,11 @@ public class Main {
 	}
 	
 	public static void inverter(Lista lista) {
-		
+		Lista lista_inv = new Lista();
+		No aux = lista.fim;
+		while (aux != null) {
+			lista_inv.inserir(aux.dado);
+			aux = aux.esq;
+		}
 	}
 }
