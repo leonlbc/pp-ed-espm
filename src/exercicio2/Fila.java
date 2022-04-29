@@ -4,7 +4,7 @@ public class Fila {
 
 	No inicio, fim;
 	
-	// método para inserir um elemento no final da fila (enfileirar)
+	// metodo para inserir um elemento no final da fila (enfileirar)
 	public void enfileirar(Motorista motorista) {
 		No aux = new No(motorista);
 		if(inicio == null) {
@@ -16,13 +16,21 @@ public class Fila {
 		fim = aux;
 	}
 	
-	// método para desenfileirar um elemento da fila, ou seja, remover o primeiro elemento
+	// metodo para desenfileirar um elemento da fila, ou seja, remover o primeiro elemento
 	public void desenfileirar() {
-		
+		if (inicio != null) {
+			No aux = inicio.dir;
+			inicio.dir.esq = null;
+			inicio = aux;
+		}
 	}
 	
-	// método para exibir os dados (nome e placa) dos motoristas
+	// metodo para exibir os dados (nome e placa) dos motoristas
 	public void mostrarDados() {
-		
+		No aux = inicio;
+		while(aux != null){
+			System.out.println("Nome: " + aux.motorista.getNome() + ", Placa: " + aux.motorista.getPlaca());
+			aux = aux.dir;
+		}
 	}
 }
