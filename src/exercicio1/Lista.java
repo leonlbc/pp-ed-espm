@@ -17,19 +17,19 @@ public class Lista {
 	private void inserirPrioridade(No aux) {
 		if(inicio == null) {
 			inicio = aux;
-		} else {
+		} else { // Se nao houver amarelos, inserir no inicio
 			if (inicio.cor != aux.cor){
-				No x = inicio;
+				No inicio_aux = inicio;
 				inicio = aux;
-				aux.prox = x;
-			} else {
-				No y = inicio;
-				while(y.prox.cor == aux.cor){
-					y = y.prox;
+				aux.prox = inicio_aux;
+			} else { // Se houver amarelo(s), inserir depois do ultimo amarelo
+				No fim_amarelo = inicio;
+				while(fim_amarelo.prox.cor == aux.cor){
+					fim_amarelo = fim_amarelo.prox;
 				}
-				No z = y.prox;
-				y.prox = aux;
-				aux.prox = z;
+				No fim_aux = fim_amarelo.prox;
+				fim_amarelo.prox = aux;
+				aux.prox = fim_aux;
 			}
 		}
 	}
