@@ -28,7 +28,7 @@ public class Lista {
 					fim.prox = aux;
 					fim = aux;
 				}
-				else { // Se o ultimo for verde, colocar antes desse verde
+				else { // Se o ultimo for verde, colocar antes do primeiro verde
 					No fim_amarelo = inicio;
 					while(fim_amarelo.prox.cor == aux.cor){
 						fim_amarelo = fim_amarelo.prox;
