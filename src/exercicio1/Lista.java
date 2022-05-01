@@ -18,8 +18,8 @@ public class Lista {
 		if(inicio == null) {
 			inicio = aux;
 			fim = aux;
-		} else { 
-			if (inicio.cor != aux.cor){ // Se nao houver amarelos, inserir no inicio
+		} else {
+			if (!inicio.cor.equalsIgnoreCase(aux.cor)){ // Se nao houver amarelos, inserir no inicio
 				No inicio_aux = inicio;
 				inicio = aux;
 				aux.prox = inicio_aux;
@@ -28,14 +28,14 @@ public class Lista {
 					fim.prox = aux;
 					fim = aux;
 				}
-				else { // Se o ultimo for verde, colocar antes do primeiro verde
+				else { // Colocar antes do primeiro verde
 					No fim_amarelo = inicio;
-					while(fim_amarelo.prox.cor == aux.cor){
+					while(fim_amarelo.prox.cor.equalsIgnoreCase(aux.cor)){
 						fim_amarelo = fim_amarelo.prox;
 					}
-					No fim_aux = fim_amarelo.prox;
+					No verde = fim_amarelo.prox;
 					fim_amarelo.prox = aux;
-					aux.prox = fim_aux;
+					aux.prox = verde;
 				}
 			}
 		}
