@@ -24,7 +24,7 @@ public class Lista {
 				inicio = aux;
 				aux.prox = inicio_aux;
 			} else { // Se houver amarelo(s), inserir depois do ultimo amarelo
-				if(fim.cor == aux.cor){ // Se o ultimo elemento da lista for amarelo, ele sera o fim
+				if(fim.cor.equalsIgnoreCase(aux.cor)){ // Se o ultimo elemento da lista for amarelo, ele sera o fim
 					fim.prox = aux;
 					fim = aux;
 				}
