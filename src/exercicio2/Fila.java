@@ -19,9 +19,12 @@ public class Fila {
 	// metodo para desenfileirar um elemento da fila, ou seja, remover o primeiro elemento
 	public void desenfileirar() {
 		if (inicio != null) {
-			No aux = inicio.dir;
-			inicio.dir.esq = null;
-			inicio = aux;
+			if (inicio.dir != null) {
+				inicio = inicio.dir;
+				inicio.esq = null;
+			} else {
+				inicio = null;
+			}
 		}
 	}
 	
