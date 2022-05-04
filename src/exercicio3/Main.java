@@ -20,11 +20,25 @@ public class Main {
 	}
 	
 	public static void inverter(Lista lista) {
-		Lista lista_inv = new Lista();
-		No aux = lista.fim;
-		while (aux != null) {
-			lista_inv.inserir(aux.dado);
-			aux = aux.esq;
+		if (lista.inicio != null) {
+			No aux = lista.inicio;
+			No fim = lista.fim;
+			while (aux != null){
+				//Armazena o No
+				No aux2 = aux;
+				//Mover aux para o lado
+				aux = aux.dir;
+				//Troca esquerda e direita
+				No esq = aux2.esq;
+				aux2.esq = aux2.dir;
+				aux2.dir = esq;
+
+				if (aux == lista.inicio) {
+					lista.fim = fim;
+				} else if (aux == fim) {
+					lista.inicio = aux;
+				}
+			}
 		}
 	}
 }
