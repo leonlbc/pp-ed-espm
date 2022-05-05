@@ -13,25 +13,27 @@ public class Lista {
 			fim = aux;
 		}
 		else {
-			No aux_in = inicio;
-			while (aux_in != null) {
-				if (dado < aux_in.dado) {
-					if (aux_in == inicio) {
+			No aux2 = inicio;
+			while (aux2 != null) {
+				if (dado < aux2.dado) {
+					if (aux2 == inicio) {
 						inicio = aux;
 					} else {
-						aux_in.esq.dir = aux;
+						aux2.esq.dir = aux;
 					}
-					aux_in.esq = aux;
-					aux.dir = aux_in;
+					No aux2_esq = aux2.esq;
+					aux2.esq = aux;
+					aux.dir = aux2;
+					aux.esq = aux2_esq;
 					break;
 				} else {
-					if (aux_in == fim) {
-						aux_in.dir = aux;
-						aux.esq = aux_in;
+					if (aux2 == fim) {
+						aux2.dir = aux;
+						aux.esq = aux2;
 						fim = aux;
 						break;
 					} 
-					aux_in = aux_in.dir;
+					aux2 = aux2.dir;
 				}
 			}
 		}
